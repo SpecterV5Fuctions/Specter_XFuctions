@@ -12,7 +12,7 @@ return {
 
     --// WHITELIST OWNER (poder total)
     whitelistOwner = {
-        [8921899462] = true, -- owner
+        [8929599451] = true, -- owner
     },
 
     --// BLACKLIST (jogadores que são expulsos automaticamente)
