@@ -14,18 +14,28 @@ local OrionLib = {
 	Flags = {},
 	Themes = {
 		Default = {
-			Main = Color3.fromRGB(25, 25, 25),
-			Second = Color3.fromRGB(32, 32, 32),
-			Stroke = Color3.fromRGB(60, 60, 60),
-			Divider = Color3.fromRGB(60, 60, 60),
-			Text = Color3.fromRGB(240, 240, 240),
-			TextDark = Color3.fromRGB(150, 150, 150)
-		}
-	},
-	SelectedTheme = "Default",
-	Folder = nil,
-	SaveCfg = false
-}
+			Main      = Color3.fromRGB(25, 25, 25),
+			Second    = Color3.fromRGB(32, 32, 32),
+			Stroke    = Color3.fromRGB(60, 60, 60),
+			Divider   = Color3.fromRGB(60, 60, 60),
+			Text      = Color3.fromRGB(240, 240, 240),
+			TextDark  = Color3.fromRGB(150, 150, 150)
+		},
+
+		VibrantRed = {
+			Main      = Color3.fromRGB(200, 0, 0),      -- Vermelho vibrante
+			Second    = Color3.fromRGB(100, 0, 0),      -- Vermelho escuro (simulando degradê)
+			Stroke    = Color3.fromRGB(60, 0, 0),
+			Divider   = Color3.fromRGB(90, 0, 0),
+			Text      = Color3.fromRGB(255, 200, 200),
+			TextDark  = Color3.fromRGB(180, 100, 100)
+	}	
+},
+
+SelectedTheme = "VibrantRed",
+Folder        = nil,
+SaveCfg       = false
+
 
 --Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
 local Icons = {}
@@ -470,12 +480,12 @@ function OrionLib:MakeWindow(WindowConfig)
 	local UIHidden = false
 
 	WindowConfig = WindowConfig or {}
-	WindowConfig.Name = WindowConfig.Name or "SPP"
+	WindowConfig.Name = WindowConfig.Name or "Orion Library"
 	WindowConfig.ConfigFolder = WindowConfig.ConfigFolder or WindowConfig.Name
 	WindowConfig.SaveConfig = WindowConfig.SaveConfig or false
 	WindowConfig.HidePremium = WindowConfig.HidePremium or false
 	if WindowConfig.IntroEnabled == nil then
-		WindowConfig.IntroEnabled = true
+		WindowConfig.IntroEnabled = false
 	end
 	WindowConfig.IntroText = WindowConfig.IntroText or "Orion Library"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
